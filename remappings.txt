@@ -1,0 +1,9 @@
+@openzeppelin/=lib/etherspot-prime-contracts/node_modules/@openzeppelin/
+@solady/=lib/etherspot-prime-contracts/node_modules/solady/src/
+ds-test/=lib/etherspot-prime-contracts/lib/forge-std/lib/ds-test/src/
+etherspot-prime-contracts/=lib/etherspot-prime-contracts/
+forge-std/=lib/forge-std/src/
+sentinellist/=lib/etherspot-prime-contracts/erc7579-ref-impl/lib/sentinellist/src/
+solady/=lib/solady/
+modulekit/=lib/modulekit/
+erc7579-implementation/=lib/erc7579-implementation/src/
