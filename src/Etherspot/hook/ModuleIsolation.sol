@@ -56,7 +56,7 @@ contract ModuleIsolationHook is IHook {
             for(uint i=0;i<executions.length;i++)
             {
                 bytes4 checkSig = bytes4(executions[i].callData[0]) | (bytes4(executions[i].callData[1]) >> 8) | (bytes4(executions[i].callData[2]) >> 16) | (bytes4(executions[i].callData[3]) >> 24);
-                require(!this.contains(checkSig, bannedSigs), "bannedSig..!");
+                require(!contains(checkSig, bannedSigs), "bannedSig..!");
             }
 
         } else if (callType == CALLTYPE_SINGLE) {
@@ -67,11 +67,11 @@ contract ModuleIsolationHook is IHook {
             ) = executionCallData.decodeSingle();
 
             bytes4 checkSig = bytes4(callData[0]) | (bytes4(callData[1]) >> 8) | (bytes4(callData[2]) >> 16) | (bytes4(callData[3]) >> 24);
-            require(!this.contains(checkSig, bannedSigs), "bannedSig..!");
+            require(!contains(checkSig, bannedSigs), "bannedSig..!");
 
         } else if (callType == CALLTYPE_DELEGATECALL) {
             bytes4 checkSig = bytes4(executionCallData[0]) | (bytes4(executionCallData[1]) >> 8) | (bytes4(executionCallData[2]) >> 16) | (bytes4(executionCallData[3]) >> 24);
-            require(!this.contains(checkSig, bannedSigs), "bannedSig..!");
+            require(!contains(checkSig, bannedSigs), "bannedSig..!");
         }
     }
 
